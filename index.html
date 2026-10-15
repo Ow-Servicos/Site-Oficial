@@ -21,9 +21,19 @@
   <meta property="og:locale" content="pt_MZ">
   <meta property="og:site_name" content="OW-Serviços">
 
+  <!-- Normalização de URL para GitHub Pages (Garante que caminhos relativos de imagens nunca falhem) -->
+  <script>
+    (function () {
+      var p = window.location.pathname;
+      if (window.location.hostname.endsWith('github.io') && !p.endsWith('/') && !p.endsWith('.html')) {
+        window.location.replace(window.location.protocol + '//' + window.location.host + p + '/' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
 
   <!-- Fontes Google: Cormorant Garamond (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Folha de Estilos Principal -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 
   <!-- Dados Estruturados Schema.org -->
   <script type="application/ld+json">
@@ -71,7 +81,7 @@
     <div class="container header__inner">
       <!-- Logótipo da Marca -->
       <a href="#inicio" class="header__logo" aria-label="OW-Serviços - Página Inicial">
-        <img src="assets/logo.png" alt="Logótipo OW-Serviços" width="46" height="46" class="header__logo-img">
+        <img src="./assets/logo.png" alt="Logótipo OW-Serviços" width="46" height="46" class="header__logo-img" onerror="this.onerror=null; this.src='./assets/logo.jpg';">
         <span class="header__logo-text">OW<span class="header__logo-accent">-Serviços</span></span>
       </a>
 
@@ -150,7 +160,7 @@
     <section class="hero" id="inicio" aria-label="Apresentação institucional">
       <!-- SUBSTITUIR: Fotografia de fundo em assets/hero.webp (1920x1080 recomendado) -->
       <div class="hero__bg" role="img" aria-label="Ambiente solene de evento coordenado pela OW-Serviços"
-           style="background-image: url('assets/placeholder-hero.svg');">
+           style="background-image: url('./assets/placeholder-hero.svg');">
       </div>
       <div class="hero__overlay"></div>
 
@@ -736,7 +746,7 @@
           <div class="about-ow__media slide-up">
             <div class="about-ow__image-frame">
               <!-- SUBSTITUIR: Substituir por fotografia real da equipa em assets/equipa-ow.jpg (1200x900) -->
-              <img src="assets/placeholder-team.svg" alt="Equipa OW-Serviços em exercício protocolar" class="about-ow__image" loading="lazy" width="600" height="450">
+              <img src="./assets/placeholder-team.svg" alt="Equipa OW-Serviços em exercício protocolar" class="about-ow__image" loading="lazy" width="600" height="450">
               <div class="about-ow__image-badge">
                 <span class="about-ow__badge-title">Coordenação no Terreno</span>
                 <span class="about-ow__badge-sub">Presença activa antes e durante o evento</span>
@@ -1220,7 +1230,7 @@
       <!-- Coluna 1: Identidade da Marca -->
       <div class="footer__col footer__col--brand">
         <a href="#inicio" class="footer__logo" aria-label="OW-Serviços - Início">
-          <img src="assets/logo.png" alt="Logótipo Oficial OW-Serviços" width="60" height="60" loading="lazy">
+          <img src="./assets/logo.png" alt="Logótipo Oficial OW-Serviços" width="60" height="60" loading="lazy" onerror="this.onerror=null; this.src='./assets/logo.jpg';">
         </a>
         <p class="footer__slogan">
           Prestação de Serviços<br>e Gestão de Eventos
@@ -1332,7 +1342,7 @@
   </aside>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
 </html>

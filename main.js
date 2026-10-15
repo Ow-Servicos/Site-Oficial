@@ -29,7 +29,7 @@
       category: 'social',
       type: 'Protocolo e coordenação',
       date: 'Outubro 2026',
-      image: 'assets/placeholder-event-1.svg', // SUBSTITUIR: assets/foto-casamento.webp
+      image: './assets/placeholder-event-1.svg', // SUBSTITUIR: ./assets/foto-casamento.webp
       alt: 'Casamento Iracema & Matheus - protocolo e coordenação'
     },
     {
@@ -38,7 +38,7 @@
       category: 'institucional',
       type: 'Protocolo e apoio operacional',
       date: 'Setembro 2026',
-      image: 'assets/placeholder-event-2.svg', // SUBSTITUIR: assets/foto-conferencia-graf.webp
+      image: './assets/placeholder-event-2.svg', // SUBSTITUIR: ./assets/foto-conferencia-graf.webp
       alt: '17ª Conferência GRAF - protocolo e apoio operacional'
     },
     {
@@ -48,7 +48,7 @@
       category: 'corporativo',
       type: 'Coordenação operacional',
       date: 'Agosto 2026',
-      image: 'assets/placeholder-event-3.svg', // SUBSTITUIR: assets/foto-corporativo.webp
+      image: './assets/placeholder-event-3.svg', // SUBSTITUIR: ./assets/foto-corporativo.webp
       alt: 'Evento Corporativo - coordenação e apoio protocolar'
     },
     {
@@ -58,7 +58,7 @@
       category: 'institucional',
       type: 'Protocolo institucional',
       date: 'Julho 2026',
-      image: 'assets/placeholder-event-4.svg', // SUBSTITUIR: assets/foto-institucional.webp
+      image: './assets/placeholder-event-4.svg', // SUBSTITUIR: ./assets/foto-institucional.webp
       alt: 'Cerimónia institucional e governação'
     }
   ];
@@ -441,7 +441,7 @@
     grid.innerHTML = PORTFOLIO_EVENTS.map(event => `
       <article class="portfolio-card fade-in" data-category="${event.category}" data-id="${event.id}" tabindex="0" role="button" aria-label="Ver detalhes de ${event.title}">
         <div class="portfolio-card__image-wrapper">
-          <img class="portfolio-card__image" src="${event.image}" alt="${event.alt}" loading="lazy" width="600" height="400" />
+          <img class="portfolio-card__image" src="${event.image}" alt="${event.alt}" loading="lazy" width="600" height="400" onerror="this.onerror=null; this.src='./assets/logo.png';" />
           <span class="portfolio-card__badge">${event.category.toUpperCase()}</span>
           <div class="portfolio-card__overlay">
             <span class="portfolio-card__zoom-hint">
@@ -570,7 +570,11 @@
     const badge = lightboxModal.querySelector('.lightbox__badge');
     const closeBtn = lightboxModal.querySelector('.lightbox__close');
 
-    if (img) { img.src = eventData.image; img.alt = eventData.alt; }
+    if (img) {
+      img.src = eventData.image;
+      img.alt = eventData.alt;
+      img.onerror = function() { this.src = './assets/logo.png'; };
+    }
     if (title) title.textContent = eventData.title;
     if (type) type.textContent = eventData.type;
     if (date) date.textContent = eventData.date;
